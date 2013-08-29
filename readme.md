@@ -33,3 +33,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ## Created by
 @gehirnfussel [twitter](http://twitter.com/gehirnfussel) [adn](http://alpha.app.net/gehirnfussel)
+
+## Credits to
+@branleb [twitter](https://twitter.com/branleb) for the idea.
