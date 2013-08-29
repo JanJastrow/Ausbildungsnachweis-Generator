@@ -1,11 +1,10 @@
 
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="de">
 <head>
 		<meta charset="utf-8">
-		<link rel="icon" href="favicon.ico" type="image/x-icon">
 		<title>Berichtsheft-Generator</title>
-		<link href="yay_beauty.css" media="all" rel="stylesheet" />
+		<link href="./css/yay_beauty.css" media="all" rel="stylesheet" />
 </head>
 <body>
 <h1>Ausbildungsnachweis-Generator</h1>
@@ -57,8 +56,6 @@
 <td><input type="submit" value="Bericht erstellen" /></td>
 </tr>
 </table>
-
-
 
 </form>
 
