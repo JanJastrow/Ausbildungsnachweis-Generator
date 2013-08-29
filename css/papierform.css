@@ -1,35 +1,31 @@
 body {
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-	color: #333333;
-	background-color: #fefefe;
+	font-family: Arial, sans-serif;
+	color: #000000;
+	background-color: #ffffff;
 	font-size: 12pt;
-	padding-left: 1em;
-	padding-top: 1em;
+	padding-left: 50px;
 	width: 640px;
 	line-height: 1.3em;
 }
 h1 {
-	font-size: 20pt;
+	font-size: 11pt;
 	font-weight: bold;
 	line-height: 1em;
-	margin: 0 0 1em 0;
+	margin: 1em 0;
 }
-h1.title {
-	border-bottom: 2px solid #ccc;
-}
-div#output table {
+div.output table {
 	border: 0px solid black;
 	padding: 0;
 	margin: 0;
 	border-collapse: collapse;
 	width: 640px;
 }
-div#output td {
+div.output td {
 	border: 1px solid black;
 	padding: 0.5em;
 	margin: 0;
 }
-div#output tr {
+div.output tr {
 	padding: 0;
 	margin: 0;
 }
@@ -43,15 +39,6 @@ div#output tr {
 	width: 80px;
 }
 
-footer p {
-	font-size: 10pt;
-	border: 1px solid #a3a3a3;
-	padding: 0.5em;
-	line-height: 1em;
-	margin: 1.5em 0;
-}
-
-
 /* ==========================================================================
    Print styles
    ========================================================================== */
@@ -62,7 +49,9 @@ footer p {
 		font-family: Arial, sans-serif;
 		color: #000000;
 		background-color: #ffffff;
+		font-size: 12pt;
 		padding-left: 50px;
+		width: 640px;
 		line-height: 1.3em;
 	}
 	h1 {

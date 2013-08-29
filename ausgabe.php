@@ -61,6 +61,8 @@ $stunden_urlaub = price2float($_POST['userinput_stdUrlaub']);
 $stunden_arbeit = $stunden_gesamt - $stunden_unterw - $stunden_schule - $stunden_urlaub;
 
 $unterwText = nl2br($_POST['userinput_unterwText']);
+$schuleText = nl2br($_POST['userinput_schuleText']);
+
 
 //Kalenderwoche und Speiseplan
 	$kw = (int)date('W');
@@ -108,7 +110,8 @@ $Z_stunden_arbeit = 0;
 <body>
 <h1>Ausbildungsnachweis</h1>
 
-<table border="0">
+<div id="output">
+<table border="0" id="output">
 	<tr>
 	<td width="250">Nummer:</td>
 	<td colspan="3" width="380"><?php echo $berichtnr ?></td>
@@ -132,7 +135,6 @@ $Z_stunden_arbeit = 0;
 	<td>28.07.2013</td>
 	</tr>
 </table>
-
 <br />
 
 <table>
@@ -141,7 +143,7 @@ $Z_stunden_arbeit = 0;
 	<td class="grey t_r">Stunden</td>
 	</tr>
 	<tr>
-	<td class="t_l text">
+	<td class="t_l">
 <?php
 
 while ($Z_stunden_arbeit < $stunden_arbeit){
@@ -162,7 +164,7 @@ while ($Z_stunden_arbeit < $stunden_arbeit){
 	<td class="grey t_r">Stunden</td>
 	</tr>
 	<tr>
-	<td class="t_l text"><?php echo $unterwText ?></td>
+	<td class="t_l"><?php if ($stunden_unterw == 0) { echo "-"; }else{ echo $unterwText; } ?></td>
 	<td class="t_r"><?php echo $stunden_unterw ?> Stunden</td>
 	</tr>
 	<tr>
@@ -170,10 +172,11 @@ while ($Z_stunden_arbeit < $stunden_arbeit){
 	<td class="grey t_r">Stunden</td>
 	</tr>
 	<tr>
-	<td class="t_l text"><?php if ($stunden_schule == 0) { echo "Kein Berufsschulunterricht - Ferien"; }else{ echo "Wir nahmen folgende Themen in der Berufsschule durch."; } ?></td>
+	<td class="t_l"><?php if ($stunden_schule == 0) { echo "Kein Berufsschulunterricht - Ferien"; }else{ echo $schuleText; } ?></td>
 	<td class="t_r"><?php echo $stunden_schule ?> Stunden</td>
 	</tr>
 </table>
+</div>
 
 <p>Durch die nachfolgende Unterschrift wird die Richtigkeit und Vollständigkeit der obigen Angaben bestätigt.</p>
 

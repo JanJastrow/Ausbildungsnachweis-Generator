@@ -7,13 +7,15 @@
 		<link href="./css/yay_beauty.css" media="all" rel="stylesheet" />
 </head>
 <body>
-<h1>Ausbildungsnachweis-Generator</h1>
+<header>
+	<h1 class="title">Ausbildungsnachweis-Generator</h1>
+</header>
 
 <form action="ausgabe.php" method="post">
 <table>
 <tr>
-<td>Name:</td>
-<td><input type="text" name="userinput_name" value="Mensch" onblur="if(this.value == '') { this.value='Mensch'}" onfocus="if (this.value == 'Mensch') {this.value=''}"/></td>
+<td>Vor- und Nachname:</td>
+<td><input type="text" name="userinput_name" value="Ein Mensch" onblur="if(this.value == '') { this.value='Ein Mensch'}" onfocus="if (this.value == 'Ein Mensch') {this.value=''}"/></td>
 </tr>
 <tr>
 <td>Ausbildungsjahr:</td>
@@ -29,27 +31,31 @@
 </tr>
 <tr>
 <td>Gesammte Arbeitszeit pro Woche:</td>
-<td><input type="text" name="userinput_stdWche" value="38.5" onclick="this.value='';" /></td>
+<td><input type="text" name="userinput_stdWche" value="38.5" onclick="this.value='';" onblur="if(this.value == '') { this.value='38.5'}" onfocus="if (this.value == '38.5') {this.value=''}" /></td>
 </tr>
 <tr>
 <td>Ausbildungsnachweis-Nr:</td>
-<td><input type="text" name="userinput_ABNr"  value="1" onblur="if(this.value == '') { this.value='1'}" onfocus="if (this.value == '1') {this.value=''}"/></td>
+<td><input type="number" step="1" min="1" name="userinput_ABNr"  value="1" onblur="if(this.value == '') { this.value='1'}" onfocus="if (this.value == '1') {this.value=''}"/></td>
 </tr>
 <tr>
 <td>Urlaub in dieser Woche (in Stunden):</td>
-<td><input type="number" name="userinput_stdUrlaub" value="0" onblur="if(this.value == '') { this.value='0'}" onfocus="if (this.value == '0') {this.value=''}"/></td>
-</tr>
-<tr>
-<td>Betriebliche Unterweisungem (in Stunden):</td>
-<td><input type="number" name="userinput_stdUnterw" value="0" onblur="if(this.value == '') { this.value='0'}" onfocus="if (this.value == '0') {this.value=''}"/></td>
+<td><input type="number" step="any" min="0"  name="userinput_stdUrlaub" value="0" onblur="if(this.value == '') { this.value='0'}" onfocus="if (this.value == '0') {this.value=''}"/></td>
 </tr>
 <tr>
 <td>Berufsschule (in Stunden):</td>
-<td><input type="number" name="userinput_stdSchule" value="0" onblur="if(this.value == '') { this.value='0'}" onfocus="if (this.value == '0') {this.value=''}"/></td>
+<td><input type="number" step="any" min="0"  name="userinput_stdSchule" value="0" onblur="if(this.value == '') { this.value='0'}" onfocus="if (this.value == '0') {this.value=''}"/></td>
 </tr>
 <tr>
-<td>Text:</td>
-<td><textarea name="userinput_unterwText" cols="30" rows="8"></textarea></td>
+<td>Themen des Berufsschulunterrichts:</td>
+<td><textarea name="userinput_schuleText" cols="29" rows="8" ></textarea></td>
+</tr>
+<tr>
+<td>Betriebliche Unterweisungen (in Stunden):</td>
+<td><input type="number" step="any" min="0"  name="userinput_stdUnterw" value="0" onblur="if(this.value == '') { this.value='0'}" onfocus="if (this.value == '0') {this.value=''}"/></td>
+</tr>
+<tr>
+<td>Betriebliche Unterweisungen:</td>
+<td><textarea name="userinput_unterwText" cols="29" rows="8" ></textarea></td>
 </tr>
 <tr>
 <td></td>
@@ -60,6 +66,6 @@
 </form>
 
 
-<footer><p>version 0.1.1 • Last change: 2013-08-29</p></footer>
+<footer><p>version 0.1.2 — Last change: 2013-08-29</p></footer>
 </body>
 </html>
