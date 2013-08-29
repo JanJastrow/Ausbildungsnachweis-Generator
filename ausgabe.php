@@ -98,15 +98,12 @@ $taetigkeitenDauer = array(0.75, 0.75, 1, 0.666, 0.5, 0.666, 0.75, 0.5, 0.333, 0
 $Z_stunden_arbeit = 0;
 
 ?>
-
-
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="de">
 <head>
 		<meta charset="utf-8">
-		<link rel="icon" href="favicon.ico" type="image/x-icon">
-		<title>Berichtsheft</title>
-		<link href="yay_beauty.css" media="all" rel="stylesheet" />
+		<title>Berichtsheft-Generator</title>
+		<link href="./css/yay_beauty.css" media="all" rel="stylesheet" />
 </head>
 <body>
 <h1>Ausbildungsnachweis</h1>
