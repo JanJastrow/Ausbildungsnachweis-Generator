@@ -101,6 +101,6 @@ I8                             8I
 </form>
 
 
-<footer><p class="footer">Ausbildungsnachweis-Generator by <a href="http://schwerkraftlabor.de/blog/contact" target="_blank">@Gehirnfussel</a> — v0.2.0 — <a href="https://github.com/Gehirnfussel/Ausbildungsnachweis-Generator" target="_blank">source</a> — <a href="http://opensource.org/licenses/mit-license.php" target="_blank">license</a></p></footer>
+<footer><p class="footer">Ausbildungsnachweis-Generator v0.2.0 by <a href="http://schwerkraftlabor.de/blog/kontact" target="_blank">@Gehirnfussel</a> — <a href="https://github.com/Gehirnfussel/Ausbildungsnachweis-Generator" target="_blank">source</a> — <a href="http://opensource.org/licenses/mit-license.php" target="_blank">license</a></p></footer>
 </body>
 </html>
