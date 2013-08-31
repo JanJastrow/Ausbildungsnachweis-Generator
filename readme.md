@@ -3,10 +3,14 @@
 I was tired of writing my "Ausbildungsnachweis", which is a log of what I do as a job-trainee.
 So I started this project to code something and to make things easier.
 
+"I'll be honest, I'm throwing science at the walls here to see what sticks." ~Cave Johnson
+
 ## ToDos
 * Need a new, shorter project-name
 * Cookies for a good feeling
+* HTML5 local storage of settings?
 * Export/Import of settings
+* CSV Import
 * Clean up
 * Get a girlfriend
 
@@ -15,7 +19,7 @@ So I started this project to code something and to make things easier.
 * A Browser
 
 ## Demo
-* [Demo on my server](http://j.mp/abn_gen)
+* [Demo](http://j.mp/abn_gen)
 
 ## License
 

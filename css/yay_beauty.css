@@ -8,15 +8,33 @@ body {
 	width: 640px;
 	line-height: 1.3em;
 }
+p {
+	padding: 0;
+	margin: 0;
+}
 h1 {
 	font-size: 20pt;
 	font-weight: bold;
 	line-height: 1em;
-	margin: 0 0 1em 0;
+	margin: 0 0 0.5em 0;
 }
 h1.title {
 	border-bottom: 2px solid #ccc;
 }
+article.info {
+	border: 1px solid #e7cf00;
+	background-color: #fff9c6;
+	margin: 0.5em 0;
+	padding: 0.5em;
+	font-size: 10pt;
+	font-style: italic;
+}
+article.info img.logo {
+	height: 60px;
+	float: left;
+	margin-right: 1em;
+}
+
 div#output table {
 	border: 0px solid black;
 	padding: 0;
@@ -43,14 +61,45 @@ div#output tr {
 	width: 80px;
 }
 
-footer p {
+a {
+	color: #000;
+	text-decoration: none;
+	font-weight: bold;
+}
+a:hover, a:active, a:focus{
+	color: #000;
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+p.footer {
 	font-size: 10pt;
 	border: 1px solid #a3a3a3;
 	padding: 0.5em;
 	line-height: 1em;
 	margin: 1.5em 0;
+	background-color: #eee;
 }
 
+/* ClearFix */
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
 
 /* ==========================================================================
    Print styles
