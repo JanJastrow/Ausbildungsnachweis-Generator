@@ -1,6 +1,6 @@
 <?php
-# error_reporting (E_ALL | E_STRICT);
-# ini_set ('display_errors' , 1);
+error_reporting (E_ALL | E_STRICT);
+ini_set ('display_errors' , 1);
 
 // Zahlen-String in Float wandeln
 // Quelle: http://xfragger.de/231/werteingabe-geld-in-gultiges-float-umwandeln
@@ -69,11 +69,17 @@ $stunden_arbeit = $stunden_gesamt - $stunden_unterw - $stunden_schule - $stunden
 
 $unterwText = nl2br($_POST['userinput']['unterwText']);
 $schuleText = nl2br($_POST['userinput']['schuleText']);
-$schuleText = nl2br($_POST['userinput']['schuleText']);
 $taetigkeiten = nl2br($_POST['userinput']['taetigkeiten']);
 
-// CVS Import for the random data
 
+// Soll CSV importiert werden?
+if (isset($_POST['Generate'])) {
+	$generate = $_POST['Generate'];
+} else {
+	$generate = "Nein";
+}
+
+// CVS Import for the random data
 $csv = "imland.csv";
 if (isset($_GET['userinput_csv'])) {
 
@@ -102,6 +108,20 @@ if (($handle = fopen($csv, "r")) !== FALSE) {
     fclose($handle);
 }
 
+
+// Cookies
+// Check ob Cookie gesetzt werden soll
+if (isset($_POST['Kekse'])) {
+	$kekse = $_POST['Kekse'];
+} else {
+	$kekse = "Nein";
+}
+// Cookie mit Daten des Formulars setzen
+if ($kekse == "Ja") {
+	setcookie("Data", "$berichtnr ✙ $name ✙ $abteilung ✙ $lehrjahr ✙ $woche ✙ $stunden_gesamt ✙ $stunden_unterw ✙ $stunden_schule ✙ $stunden_urlaub");
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="de">
@@ -115,22 +135,58 @@ if (($handle = fopen($csv, "r")) !== FALSE) {
 		<![endif]-->
 </head>
 <!--
-      .....           .....
-  ,ad8PPPP88b,     ,d88PPPP8ba,
- d8P"      "Y8b, ,d8P"      "Y8b
-dP'           "8a8"           `Yd
-8(              "              )8
-I8                             8I
- Yb,                         ,dP
-  "8a,                     ,a8"
-    "8a,                 ,a8"
-      "Yba             adP"			Love you, guys!
-        `Y8a         a8P'
-          `88,     ,88'
-            "8b   d8"
-             "8b d8"
-              `888'
-                "
+                    `@@@@@@@@@@@@@@@@@@@@@@@,
+                   #@@@@@@@@@@@@@@@@@@@@@@@@@@
+                   @@@                     @@@
+                   ;@@@#',              ;#@@@@
+                     '#@@'             `@@@+´
+                       @@+             `@@:
+                       @@+             .@@:
+                      `@@+             .@@:
+ Schwerkraftlabor.de  `@@+             .@@:
+                      `@@+             .@@;
+                      .@@'             `@@;
+                      .@@'             `@@'
+                      .@@'             `@@'
+                      .@@'             `@@+
+                      '@@'             `@@@
+                     @@@@`              @@@@
+                    @@@#                 ;@@@,
+                  ,@@@,                   `@@@+
+                 '@@@                       @@@@
+                #@@@                         @@@@
+               @@@@                           +@@@
+              @@@@                             ;@@@
+             @@@#                               :@@@
+            @@@#                                 :@@@
+           @@@#                                   :@@@
+          #@@@                                     ;@@@
+         +@@@                                       +@@@
+        ,@@@                             @@          @@@+
+        @@@                      ,@@@@   @'           @@@,
+       @@@                +@@@.  @@ '@+ +@  ,,         @@@
+      @@@:         `     @@+;@@# @@  @@ @@:@@@@`        @@@
+     ,@@@        :@@#   +@@   @@``@@`@@.@`@@  @@        ;@@#
+     @@@        '@@@@   '@@   @@@ `@@' @@ :@# @@         @@@.
+    @@@`       ;@# @@.   @@   .@@      @'  @@#@@          @@@
+   `@@#            @@@   @@@   @@     '@    .;`      `,::,,@@;
+   @@@             ,@@   `@@: :@@     #:       `,::::::::: @@@
+  .@@:              @@;   `@@@@@         `.:::::::::::::::: @@\
+  @@@               @@@            `.::::::::::::::::::::::`@@@
+ .@@;               `;`       .,:::::::::::::::::::::::::::: @@\
+ @@@                    .,:::::::::::::::::::::::::::::::::: @@@
+ @@@              .,::::::::::::::::::::::::::::::::::::::::,'@@\
+:@@;        `,::::::::::::::::::::::::::::::::::::::::::::::: @@#
+#@@.  `,::::::::::::::::::::::::::::::::::::::::::::::::::::: @@@
++@@.::::::::::::::::::::::::::::::::::::::::::::::::::::::::: @@@
+ @@@ :::::::::::::::::::::::::::::::::::::::::::::::::::::::`#@@'
+ +@@@ .:::::::::::::::::::::::::::::::::::::::::::::::::::, #@@@
+  ;@@@@. ,::::::::::::::::::::::::::::::::::::::::::::::``#@@@#
+    #@@@@@'` `,::::::::::::::::::::::::::::::::::::.  ;@@@@@@
+      :@@@@@@@@#;.  ``.,,::::::::::::::::,..`  .:+@@@@@@@@'
+         `+@@@@@@@@@@@@@@@###++'''++###@@@@@@@@@@@@@@@#.
+               .:+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@+;.
+                           ``.......´´
 -->
 <body>
 <h1>Ausbildungsnachweis</h1>
@@ -171,13 +227,23 @@ I8                             8I
 	<td class="t_l">
 <?php
 
-if ($taetigkeiten == ""){
+if ($taetigkeiten == "" && $generate == "Ja"){
 
 	$Z_stunden_arbeit = 0;
 	while ($Z_stunden_arbeit < $stunden_arbeit){
 		$taetigkeitNr = rand (0, 17);
-		
-		echo $csvdata[$taetigkeitNr][0]. "; ";
+		if ($csvdata[$taetigkeitNr][3] == 0) {
+			echo $csvdata[$taetigkeitNr][0]."; ";
+		} else {
+			$statnr = rand (0, 23);
+			$stat = array("St. 01", "St. 11", "St. 15",
+							"St. 23", "Stroke Unit", "Chir. Amb", "ZNA", "St. 31",
+							"St. 34", "St. 41", "St. 44", "St. 55", "St. 51", "St. 65",
+							"St. 71", "St. 74", "St. 75", "St. 76", "St. 81", "St. 82",
+							"St. 83", "St. 84", "St. 85", "St. 86");
+
+			echo "[$stat[$statnr]] ".$csvdata[$taetigkeitNr][0]."; ";
+		}
 		$Z_stunden_arbeit = $Z_stunden_arbeit + $csvdata[$taetigkeitNr][1];
 	}
 } else {

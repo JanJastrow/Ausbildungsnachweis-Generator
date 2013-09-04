@@ -6,11 +6,9 @@ So I started this project to code something and to make things easier.
 "I'll be honest, I'm throwing science at the walls here to see what sticks." ~Cave Johnson
 
 ## ToDos
-* Need a new, shorter project-name
-* Cookies for a good feeling
-* HTML5 local storage of settings?
-* Export/Import of settings
-* CSV Import
+* A new, shorter project-name
+* HTML5 local storage for settings
+* Create PDF?
 * Clean up
 * Get a girlfriend
 
@@ -20,6 +18,12 @@ So I started this project to code something and to make things easier.
 
 ## Demo
 * [Demo](http://j.mp/abn_gen)
+
+## Changelog
+* 0.1 Initial Release
+* 0.2 CSV Import added
+* 0.3 Save settings in cookie
+* 0.3.1 Using random location in "Generate-mode"
 
 ## License
 

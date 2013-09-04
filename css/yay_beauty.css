@@ -12,6 +12,9 @@ p {
 	padding: 0;
 	margin: 0;
 }
+.smalltext {
+	font-size: 8pt;
+}
 h1 {
 	font-size: 20pt;
 	font-weight: bold;
