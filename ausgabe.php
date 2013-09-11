@@ -188,7 +188,7 @@ if ($kekse == "Ja") {
                .:+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@+;.
                            ``.......´´
 -->
-<body>
+<body class="ausgabe">
 <h1>Ausbildungsnachweis</h1>
 
 <div id="output">

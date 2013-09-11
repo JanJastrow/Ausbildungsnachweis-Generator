@@ -8,7 +8,6 @@ So I started this project to code something and to make things easier.
 ## ToDos
 * A new, shorter project-name
 * HTML5 local storage for settings
-* Create PDF?
 * Clean up
 * Get a girlfriend
 
@@ -24,6 +23,7 @@ So I started this project to code something and to make things easier.
 * 0.2 CSV Import added
 * 0.3 Save settings in cookie
 * 0.3.1 Using random location in "Generate-mode"
+* 0.3.5 Moar Design
 
 ## License
 
@@ -38,7 +38,7 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Created by
-@Gehirnfussel [(Twitter)](http://twitter.com/gehirnfussel) [(App.net)](http://alpha.app.net/gehirnfussel)
+* @Gehirnfussel [(Twitter)](http://twitter.com/gehirnfussel) [(App.net)](http://alpha.app.net/gehirnfussel)
 
 ## Credits to
-[@branleb](https://twitter.com/branleb) for the idea.
+* [@branleb](https://twitter.com/branleb) for the idea.

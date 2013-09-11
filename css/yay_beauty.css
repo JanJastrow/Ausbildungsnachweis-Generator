@@ -1,42 +1,124 @@
+/* ==================================================================
+    The normal stuff
+   ================================================================== */
+
+html {
+	box-sizing: border-box;
+}
 body {
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 	color: #333333;
 	background-color: #fefefe;
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAJklEQVR4AWN8w4AKiBN4wyACJCEYIiCCUPAGXQumCgyBATIDwy8AO0YmCT7I0wQAAAAASUVORK5CYII=');
+	background-repeat: repeat;
 	font-size: 12pt;
-	padding-left: 1em;
-	padding-top: 1em;
-	width: 640px;
 	line-height: 1.3em;
+	margin: 0;
+	padding: 0;
+	padding-left: 1em;
+}
+body.ausgabe {
+	font-family: Arial, sans-serif;
+	width: 640px;
+	background: #ffffff;
+}
+div.wrapper {
+	width: 960px;
+	margin: 0 auto;
+	border-left: 1px solid #a0a0a0;
+	border-right: 1px solid #a0a0a0;
+	background: #fafafa;
 }
 p {
 	padding: 0;
-	margin: 0;
+	margin: 0.3em 0;
 }
+a {
+	color: #1E5799;
+	text-decoration: none;
+	font-weight: bold;
+}
+a:hover, a:active, a:focus{
+	color: #1E5799;
+	text-decoration: underline;
+	font-weight: bold;
+}
+
 .smalltext {
 	font-size: 8pt;
 }
+
+/* ==================================================================
+    The title
+   ================================================================== */
 h1 {
 	font-size: 20pt;
 	font-weight: bold;
 	line-height: 1em;
 	margin: 0 0 0.5em 0;
+	padding: 0.5em 0;
+	text-align: center;
 }
 h1.title {
-	border-bottom: 2px solid #ccc;
+	border-bottom: 2px solid #e7cf00;
+	color: #594500;
+	background: #fff9c6;
+	background: linear-gradient(to bottom, #fff9c6 0%,#fff07f 100%);
+	text-shadow: 1px 1px 1px #fefefe;
+	font-weight: bold;
+	font-size: 25pt;
 }
-article.info {
+
+/* ==================================================================
+    The description
+   ================================================================== */
+div#description {
+	float: right;
+	width: 320px;
+}
+div#description article {
 	border: 1px solid #e7cf00;
 	background-color: #fff9c6;
-	margin: 0.5em 0;
+	margin: 0em 1em 1em;
 	padding: 0.5em;
-	font-size: 10pt;
+	font-size: 10.5pt;
 	font-style: italic;
+	word-wrap: break-word;
 }
-article.info img.logo {
-	height: 60px;
-	float: left;
-	margin-right: 1em;
+img.logo {
+	width: 120px;
+	margin: 0.5em auto;
+	display: block;
 }
+
+/* ==================================================================
+    The input-fields
+   ================================================================== */
+
+div.input {
+	width: 640px;
+}
+
+
+td input, td textarea {
+	background: #ffffff;
+	border: 1px solid #b0b0b0;
+	padding: 3px;
+}
+td input:focus, td textarea:focus {
+	background: #FFFBE2;
+	border: 1px solid #666666;
+}
+.checkbox {
+	width: 18px;
+	height: 18px;
+	margin: 0;
+	padding: 1px;
+}
+
+/* ==================================================================
+    The output
+   ================================================================== */
 
 div#output table {
 	border: 0px solid black;
@@ -64,27 +146,23 @@ div#output tr {
 	width: 80px;
 }
 
-a {
-	color: #000;
-	text-decoration: none;
-	font-weight: bold;
-}
-a:hover, a:active, a:focus{
-	color: #000;
-	text-decoration: underline;
-	font-weight: bold;
-}
+/* ==================================================================
+    The footer
+   ================================================================== */
 
 p.footer {
 	font-size: 10pt;
-	border: 1px solid #a3a3a3;
+	border-top: 1px solid #a3a3a3;
+	border-bottom: 1px solid #a0a0a0;
 	padding: 0.5em;
 	line-height: 1em;
 	margin: 1.5em 0;
-	background-color: #eee;
+	background-color: #dadada;
 }
 
-/* ClearFix */
+/* ==================================================================
+    ClearFix-Hack
+   ================================================================== */
 
 .cf:before,
 .cf:after {
@@ -95,18 +173,18 @@ p.footer {
 .cf:after {
     clear: both;
 }
-
-/**
- * For IE 6/7 only
- * Include this rule to trigger hasLayout and contain floats.
- */
 .cf {
     *zoom: 1;
 }
 
-/* ==========================================================================
-   Print styles
-   ========================================================================== */
+/* ==================================================================
+    Printing to teh papers :(
+   ================================================================== */
+
+@page { 
+	size: portrait;
+	
+}
 
 @media print {
 

@@ -82,28 +82,39 @@ if(isset($_COOKIE['Data'])) {
                            ``.......´´
 -->
 <body>
+<div class="wrapper">
 <header>
 	<h1 class="title">Ausbildungsnachweis-Generator</h1>
 </header>
-<article class="info cf">
+<div id="description" class="cf">
+<article class="info">
 	<img src="logo.svg" class="logo" />
+	<p>Dies ist ein freies <a href="http://schwerkraftlabor.de/">Schwerkraftlabor</a>-Projekt, welches quelloffen unter der MIT Lizenz veröffentlicht ist.</p>
 	<p>Diese Software ist nicht zur tatsächlichen Verwendung in einer Ausbildung bestimmt.<br />
-	Ich übernehme keine Verantwort für die Verwendung der Software oder deren Ergebnisse.</p>
-	<p>Dies ist ein freies <a href="http://schwerkraftlabor.de/">Schwerkraftlabor</a>-Projekt und ist unter der MIT Lizenz veröffentlicht.</p>
+	Der Autor übernimmt keinerlei Verantwort für die Verwendung der Software oder deren Ergebnisse.</p>
 </article>
+<article>
+	<p>Mit dieser Software ist es möglich Ausbildungsnachweise zu generieren.
+	Hierbei besteht die Möglichkeit die 'Betrieblichen Tätigkeiten' selbst zu definieren,
+	oder sie nach einer Vorlage automatisch generieren zu lassen.</p>
+	<p>Diese generierten 'ABN' sind nicht zur tatsächlichen Verwendung in einer Ausbildung bestimmt,
+	und dienen als reines Beispiel für einen 'echten' Ausbildungsnachweis.</p>
+</article>
+</div>
 
+<div class="input">
 <form action="ausgabe.php" method="post" enctype="multipart/form-data">
 <table>
 <tr>
 <td>Vor- und Nachname:</td>
-<td><input type="text" name="userinput[Name]" value="<?php echo $data[1]; ?>"/></td>
+<td class=""><input type="text" name="userinput[Name]" value="<?php echo $data[1]; ?>"/></td>
 </tr>
 <tr>
 <td>Ausbildungsjahr:</td>
 <td><input type="text" name="userinput[Lehrjahr]" value="<?php echo $data[3]; ?>"/></td>
 </tr>
 <tr>
-<td>Ausbildene Abteilung:</td>
+<td>Ausbildende Abteilung:</td>
 <td><input type="text" name="userinput[Abtlg]" value="<?php echo $data[2]; ?>"/></td>
 </tr>
 <tr>
@@ -128,7 +139,7 @@ if(isset($_COOKIE['Data'])) {
 </tr>
 <tr>
 <td>Tätigkeiten autom. aus CSV generieren?</td>
-<td><input type="checkbox" name="Generate" value="Ja" /></td>
+<td><input type="checkbox" name="Generate" value="Ja" class="checkbox" /></td>
 </tr>
 <tr>
 <td>CSV-Import von Tätigkeiten:</td>
@@ -152,17 +163,19 @@ if(isset($_COOKIE['Data'])) {
 </tr>
 <tr>
 <td>Daten in Cookie speichern?</td>
-<td><input type="checkbox" name="Kekse" value="Ja" /></td>
+<td><input type="checkbox" name="Kekse" value="Ja" class="checkbox" /></td>
 </tr>
 <tr>
 <td></td>
 <td><input type="submit" value="Bericht erstellen" /></td>
 </tr>
 </table>
-
 </form>
+</div>
 
-
-<footer><p class="footer">Ausbildungsnachweis-Generator v0.3.1 by <a href="http://schwerkraftlabor.de/blog/kontact" target="_blank">@Gehirnfussel</a> — <a href="https://github.com/Gehirnfussel/Ausbildungsnachweis-Generator" target="_blank">source</a> — <a href="http://opensource.org/licenses/mit-license.php" target="_blank">license</a></p></footer>
+<footer>
+	<p class="footer">Ausbildungsnachweis-Generator v0.3.5 by <a href="http://schwerkraftlabor.de/blog/kontact" target="_blank">@Gehirnfussel</a> — <a href="https://github.com/Gehirnfussel/Ausbildungsnachweis-Generator" target="_blank">source</a> — <a href="http://opensource.org/licenses/mit-license.php" target="_blank">license</a></p>
+</footer>
+</div>
 </body>
 </html>
