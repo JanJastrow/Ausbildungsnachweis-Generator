@@ -1,4 +1,12 @@
 <?php
+#¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+#   version......: 0.3.5
+#   last.change..: 2013-09-11
+#   created.by...: Jan Jastrow
+#   contact......: jan@schwerkraftlabor.de
+#   license......: MIT license
+#   source.......: https://github.com/Gehirnfussel/Ausbildungsnachweis-Generator
+#_________________
 
 if(isset($_COOKIE['Data'])) {
 	$rawdata = ($_COOKIE['Data']);
