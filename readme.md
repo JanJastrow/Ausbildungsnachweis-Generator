@@ -9,14 +9,13 @@ So I started this project to code something and to make things easier.
 * A new, shorter project-name
 * HTML5 local storage for settings
 * Clean up
-* Get a girlfriend
 
 ## Requirements
 * PHP
 * A Browser
 
 ## Demo
-* [Demo](http://j.mp/abn_gen)
+* Not available
 
 ## Changelog
 * 0.1 Initial Release
